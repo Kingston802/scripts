@@ -27,7 +27,7 @@ case "$file" in
     *\.md) check pandoc && pandoc "$file" -o "$base".pdf ;;
     *\.cpp) check g++ && g++ -Wall -std=c++11 -g "$file" -o "$base" && "$base" ;;
     *\.c) check cc && cc "$file" -o "$base" && "$base" ;;
-    *\.py) check python && python "$file" ;;
+    *\.py) check python3 && python3 "$file" ;;
     *\.rb) check ruby && ruby "$file" ;;
     *\.go) check go && go run "$file" ;;
     *\.html) check && brave $file ;;
