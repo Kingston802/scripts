@@ -1,6 +1,13 @@
 #!/bin/bash
 
-BOOK=$(ls ~/Documents/coursebooks/ | dmenu -i )
-zathura "~/Documents/coursebooks/$BOOK" 
+BOOK=$(ls ~/school/coursebooks/ | dmenu -i )
+
+if [ $BOOK=="" ]
+then
+  exit
+else 
+  zathura "~/school/coursebooks/$BOOK" 
+fi
+    
 
 
