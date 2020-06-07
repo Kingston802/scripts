@@ -1,8 +1,7 @@
 #!/bin/bash
 
 BOOK=$(ls ~/school/coursebooks/ | dmenu -i )
-
-if [ $BOOK=="" ]
+if [ -z "$BOOK" ]
 then
   exit
 else 
