@@ -29,7 +29,10 @@ case "$file" in
     *\.c) check cc && cc "$file" -o "$base" && "$base" ;;
     *\.py) check python3 && python3 "$file" ;;
     *\.rb) check ruby && ruby "$file" ;;
+    *\.m) check matlab && runm "$file" ;;
     *\.go) check go && go run "$file" ;;
     *\.html) check && brave $file ;;
     # *\.) check && $file ;;
+    *)
+      echo "File does not match supported file types, does it have the right extension?"
 esac

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BOOK=$(ls ~/school/coursebooks/ | dmenu -i )
+BOOK=$(ls ~/school/coursebooks/ | rofi -dmenu -p "books:" -font "hack 16")
 if [ -z "$BOOK" ]
 then
   exit
