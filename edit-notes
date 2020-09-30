@@ -1,0 +1,10 @@
+#!/bin/bash
+
+NOTE=$(ls ~/school/notes/source/ | grep "\.tex" | rofi -dmenu -p "notes:" -font "hack 16")
+if [ -z "$NOTE" ]
+then
+  exit
+else 
+  st -e nvim ~/school/notes/source/$NOTE
+fi
+    

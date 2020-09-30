@@ -1,0 +1,10 @@
+#!/bin/bash
+
+NOTE=$(ls ~/school/notes/source | grep .pdf | rofi -dmenu -p "notes:" -font "hack 16")
+if [ -z "$NOTE" ]
+then
+  exit
+else 
+  zathura "~/school/notes/source/$NOTE" 
+fi
+    
