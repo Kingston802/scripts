@@ -1,0 +1,41 @@
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+BLACK='\033[0;30m'
+DARKGRAY='\033[1;30m'
+LIGHTRED='\033[1;31m'
+LIGHTGREEN='\033[1;32m'
+ORANGE='\033[0;33m'     
+YELLOW='\033[1;33m'     
+LIGHTBLUE='\033[1;34m'
+PURPLE='\033[0;35m'
+LIGHTPURPLE='\033[1;35m'
+CYAN='\033[0;36m'
+LIGHTCYAN='\033[1;36m'
+LIGHTGRAY='\033[0;37m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Colour
+
+key="$1"
+
+case "$key" in 
+  "-r") COLOUR=$RED;;
+  "-g") COLOUR=$GREEN;;
+  "-b") COLOUR=$BLUE;;
+  "-blk") COLOUR=$BLACK;;
+  "-dg") COLOUR=$DARKGRAY;;
+  "-lr") COLOUR=$LIGHTRED;;
+  "-lg") COLOUR=$LIGHTGREEN;;
+  "-o") COLOUR=$ORANGE;;
+  "-y") COLOUR=$YELLOW;;
+  "-lb") COLOUR=$LIGHTBLUE;;
+  "-p") COLOUR=$PURPLE;;
+  "-c") COLOUR=$CYAN;;
+  "-lc") COLOUR=$LIGHTCYAN;;
+  "-lgr") COLOUR=$LIGHTGRAY;;
+  "-w") COLOUR=$WHITE;;
+  "-h") echo -e "USAGE: colour -OPTION TEXT \n -r: ${RED}red${NC} -g: ${GREEN}green${NC} -b: ${BLUE}blue${NC} \n -blk: ${BLACK}black${NC} -dg: ${DARKGRAY}dark gray${NC} -lr: ${LIGHTRED}light red${NC} \n -lg: ${LIGHTGREEN}light green${NC} -o: ${ORANGE}orange${NC} -y: ${YELLOW}yellow${NC} \n -lb: ${LIGHTBLUE}light blue${NC} -p: ${PURPLE}purple${NC} -c: ${CYAN}cyan${NC} \n -lc: ${LIGHTCYAN}light cyan${NC} -lgr: ${LIGHTGRAY}light gray${NC} -w: ${WHITE}white${NC} \n -h: this message"; exit;;
+  *) echo "not a colour option, use -h for help"; exit;;
+esac
+
+echo -e "${COLOUR}${@:2}"
